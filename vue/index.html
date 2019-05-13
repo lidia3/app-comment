@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            VUE JS
+        </title>
+    </head>
+    <body>
+
+        <div id="app">
+            <input type="text" v-on:input="changeName">
+            <h1>String: {{name}}</h1>
+            <h1>Sum: {{sayHello()}}</h1>
+            <h1>{{isTrue ? "1":"0"}}</h1>
+            <h1> Func: {{string.split('').reverse().join()}}</h1>
+        </div>
+
+        <div id="app2">
+              <h2>
+                  <a v-bind:href="url">{{url}}
+
+                  </a>
+              </h2>
+              <h2 v-html="link"></h2>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+            <script>
+new Vue({
+    el:'#app',
+    data: {
+     name:'Vue',
+     number:100,
+     isTrue:true,
+     string:"Vlad"
+    },
+    methods:{
+        changeName:function(event){
+            this.name=event.target.value
+        },
+        sayHello:function(){
+return "I am function"
+        }
+    }
+})
+new Vue({
+    el:'#app2',
+    data:{
+        url:"https://www.youtube.com/watch?v=VDrJw-wuhLI&list=LLib4vQrYCoDZgKcTpzhZk8Q&index=25"
+    ,link:'<a href="http://google">Google</a>'
+    }
+
+})
+
+            </script>
+    </body>
+
+</html>
